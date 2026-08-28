@@ -19,33 +19,12 @@ const SHIELD_ICON = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none"
 const STAR_ICON = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.7 5.8 6.3.6-4.7 4.3 1.3 6.3L12 16.9 6.4 20l1.3-6.3-4.7-4.3 6.3-.6z"/></svg>`;
 
 const PRODUCTS = [
-  {id:"aura-earbuds",name:"Aura Wireless Earbuds",cat:"Tech",icon:"earbuds",price:149,old:219,tag:"Bestseller",
-    desc:"Compact true-wireless earbuds with active noise cancellation and a 30-hour case battery.",
-    specs:[["Battery","8h + 30h case"],["Connectivity","Bluetooth 5.3"],["Water resistance","IPX5"],["Weight","4.2g per bud"]]},
-  {id:"pulse-watch",name:"Pulse Smart Watch",cat:"Tech",icon:"watch",price:220,old:329,tag:"Trending",
-    desc:"Track heart rate, sleep and workouts with a bright always-on display that lasts a week per charge.",
-    specs:[["Display","1.4\" AMOLED"],["Battery life","7 days"],["Water resistance","5 ATM"],["Sensors","HR, SpO2, GPS"]]},
-  {id:"novaglow-lamp",name:"NovaGlow LED Desk Lamp",cat:"Home",icon:"lamp",price:89,old:129,tag:"New",
-    desc:"Adjustable colour-temperature desk lamp with touch dimming and a built-in USB charging port.",
-    specs:[["Brightness","3 levels"],["Color temp","3000K–6500K"],["Power","USB-C, 8W"],["Arm","Foldable, 3-joint"]]},
-  {id:"flexmount-stand",name:"FlexMount Phone Stand",cat:"Lifestyle",icon:"stand",price:55,old:null,tag:"Value pick",
-    desc:"An aluminium, fold-flat phone and tablet stand that adjusts to any angle for calls, video or reading.",
-    specs:[["Material","Aircraft aluminium"],["Compatibility","4\"–13\" devices"],["Folded size","12 x 4 cm"],["Weight","95g"]]},
-  {id:"trekpack-backpack",name:"TrekPack Foldable Backpack",cat:"Lifestyle",icon:"backpack",price:129,old:165,tag:"Trending",
-    desc:"A packable 20L backpack that folds into its own pocket — water-resistant and built for everyday carry.",
-    specs:[["Capacity","20L"],["Material","Ripstop nylon"],["Folded size","Palm-sized"],["Straps","Padded, breathable"]]},
-  {id:"coreflask-bottle",name:"CoreFlask Insulated Bottle",cat:"Lifestyle",icon:"bottle",price:75,old:null,tag:null,
-    desc:"Double-wall stainless steel bottle that keeps drinks cold for 24h or hot for 12h.",
-    specs:[["Capacity","750ml"],["Material","18/8 stainless steel"],["Insulation","24h cold / 12h hot"],["Lid","Leak-proof flip"]]},
-  {id:"airclip-charger",name:"AirClip Wireless Charger",cat:"Tech",icon:"charger",price:85,old:109,tag:null,
-    desc:"A magnetic 15W fast wireless charger that snaps to your phone and folds flat for travel.",
-    specs:[["Output","15W max"],["Compatibility","Qi / MagSafe"],["Cable","1.2m USB-C"],["Fold","3-way stand"]]},
-  {id:"snaplight-projector",name:"SnapLight Mini Projector",cat:"Home",icon:"projector",price:295,old:399,tag:"New",
-    desc:"A pocket-sized projector that turns any wall into a 100-inch screen, with built-in speaker.",
-    specs:[["Resolution","1080p support"],["Screen size","Up to 100\""],["Battery","2h internal"],["Ports","HDMI, USB, microSD"]]},
-  {id:"zenband-tracker",name:"ZenBand Fitness Tracker",cat:"Tech",icon:"tracker",price:99,old:null,tag:"Bestseller",
-    desc:"A featherlight fitness band with step, sleep and heart-rate tracking and a 12-day battery.",
-    specs:[["Battery life","12 days"],["Display","AMOLED"],["Water resistance","IP68"],["Weight","22g"]]},
+  // Add your own products here, following this exact shape:
+  // {id:"unique-id",name:"Product Name",cat:"Tech",icon:"earbuds",price:99,old:null,tag:"New",
+  //   desc:"A short one-sentence description.",
+  //   specs:[["Spec name","Spec value"],["Spec name","Spec value"]]},
+  // Available icon names: earbuds, watch, lamp, stand, backpack, bottle, charger, projector, tracker
+  // Available categories: Tech, Home, Lifestyle (or add a new one)
 ];
 
 function fmt(n){return "AED "+n.toFixed(2);}
@@ -65,7 +44,7 @@ function productCard(p){
 
 function renderGrid(el, items){
   if(!el) return;
-  el.innerHTML = items.length ? items.map(productCard).join("") : `<div class="empty-state">No products in this category yet.</div>`;
+  el.innerHTML = items.length ? items.map(productCard).join("") : `<div class="empty-state">No products yet — check back soon.</div>`;
 }
 
 function getParam(name){
