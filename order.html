@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order — Cash on Delivery — VELZO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg width="30" height="30" viewBox="0 0 32 32"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#fbfcfd"/><stop offset="0.5" stop-color="#8b929c"/><stop offset="1" stop-color="#fbfcfd"/>
+      </linearGradient></defs>
+      <path d="M4 5 L16 27 L28 5" stroke="url(#g1)" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="16" cy="27" r="2.1" fill="url(#g1)"/></svg>
+      VELZO
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="order.html" class="active">Track / Order (COD)</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="shop.html" class="btn btn-outline">Shop</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="eyebrow">No card, no account</div>
+    <h1>Cash on Delivery order</h1>
+    <p style="max-width:520px;">Tell us what you'd like and where to send it. We'll confirm by phone, then ship — you only pay when it arrives.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container" style="max-width:680px;">
+
+    <div class="form-note">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+      <span>Pay in cash to the courier when your order is delivered. No upfront payment, no card details needed.</span>
+    </div>
+
+    <div class="form-card" id="order-form-card">
+      <form id="order-form">
+        <div class="form-grid">
+          <div class="field full">
+            <label for="order-product">Product</label>
+            <select id="order-product" required></select>
+          </div>
+          <div class="field">
+            <label for="order-qty">Quantity</label>
+            <input id="order-qty" type="number" min="1" value="1" required>
+          </div>
+          <div class="field">
+            <label>Price</label>
+            <div style="padding:13px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-soft);color:var(--silver-100);font-weight:600;" id="order-price-display">—</div>
+          </div>
+          <div class="field"><label for="order-name">Full name</label><input id="order-name" type="text" required placeholder="Jordan Lee"></div>
+          <div class="field"><label for="order-phone">Phone number</label><input id="order-phone" type="tel" required placeholder="+1 555 010 2030"></div>
+          <div class="field full"><label for="order-address">Delivery address</label><input id="order-address" type="text" required placeholder="Street, apartment, building"></div>
+          <div class="field"><label for="order-city">City</label><input id="order-city" type="text" required placeholder="City"></div>
+          <div class="field"><label for="order-zip">Postal code</label><input id="order-zip" type="text" placeholder="Optional"></div>
+          <div class="field full"><label for="order-notes">Delivery notes (optional)</label><textarea id="order-notes" placeholder="Landmark, preferred time, etc."></textarea></div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Place order — pay on delivery</button>
+      </form>
+    </div>
+
+    <div class="form-card success-panel" id="order-success">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+      <h3>Order received</h3>
+      <p>We'll call to confirm shortly, then ship your order. Pay the courier in cash when it arrives.</p>
+      <div class="order-summary">
+        <div><span>Name</span><span id="summary-name"></span></div>
+        <div><span>Phone</span><span id="summary-phone"></span></div>
+        <div><span>Deliver to</span><span id="summary-address"></span></div>
+        <div><span>Order</span><span id="summary-product"></span></div>
+        <div><span>Total</span><span id="summary-total"></span></div>
+      </div>
+      <a href="shop.html" class="btn btn-outline">Continue shopping</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="margin-bottom:14px;">
+          <svg width="26" height="26" viewBox="0 0 32 32"><path d="M4 5 L16 27 L28 5" stroke="#c9cdd3" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="27" r="2.1" fill="#c9cdd3"/></svg>
+          VELZO
+        </a>
+        <p style="max-width:280px;">Useful, affordable, trending products — delivered fast, paid for on arrival.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="shop.html">All products</a>
+        <a href="shop.html">Tech</a>
+        <a href="shop.html">Home</a>
+        <a href="shop.html">Lifestyle</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact</a>
+        <a href="order.html">Order (COD)</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="contact.html">Help center</a>
+        <a href="contact.html">Shipping info</a>
+        <a href="contact.html">Returns</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VELZO. All rights reserved.</span>
+      <span>Cash on Delivery available nationwide.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
